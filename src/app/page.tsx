@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -18,6 +19,9 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center gap-4 h-screen">
       <div>
+        <ModeToggle />
+      </div>
+      <div>
         <Button>Button</Button>
       </div>
       <Separator />
@@ -34,39 +38,57 @@ export default function Home() {
 
       <div className="flex gap-2">
         <Checkbox id="checkbox" />
-        <Label htmlFor="checkbox">Checkbox</Label>
+        <Label htmlFor="checkbox" className=" cursor-pointer">
+          Checkbox
+        </Label>
       </div>
       <Separator />
       <div>
         <RadioGroup defaultValue="comfortable">
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="default" id="r1" />
-            <Label htmlFor="r1">Default</Label>
+            <RadioGroupItem value="default" id="r1" className=" cursor-pointer" />
+            <Label htmlFor="r1" className=" cursor-pointer">
+              Default
+            </Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="comfortable" id="r2" />
-            <Label htmlFor="r2">Comfortable</Label>
+            <RadioGroupItem value="comfortable" id="r2" className=" cursor-pointer" />
+            <Label htmlFor="r2" className=" cursor-pointer">
+              Comfortable
+            </Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="compact" id="r3" />
-            <Label htmlFor="r3">Compact</Label>
+            <RadioGroupItem value="compact" id="r3" className=" cursor-pointer" />
+            <Label htmlFor="r3" className=" cursor-pointer">
+              Compact
+            </Label>
           </div>
         </RadioGroup>
       </div>
       <Separator />
       <div>
         <Select>
-          <SelectTrigger className="w-[180px] border">
+          <SelectTrigger className="w-[180px] border cursor-pointer">
             <SelectValue placeholder="Select a fruit" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Fruits</SelectLabel>
-              <SelectItem value="apple">Apple</SelectItem>
-              <SelectItem value="banana">Banana</SelectItem>
-              <SelectItem value="blueberry">Blueberry</SelectItem>
-              <SelectItem value="grapes">Grapes</SelectItem>
-              <SelectItem value="pineapple">Pineapple</SelectItem>
+              <SelectItem value="apple" className="cursor-pointer">
+                Apple
+              </SelectItem>
+              <SelectItem value="banana" className="cursor-pointer">
+                Banana
+              </SelectItem>
+              <SelectItem value="blueberry" className="cursor-pointer">
+                Blueberry
+              </SelectItem>
+              <SelectItem value="grapes" className="cursor-pointer">
+                Grapes
+              </SelectItem>
+              <SelectItem value="pineapple" className="cursor-pointer">
+                Pineapple
+              </SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
