@@ -7,9 +7,14 @@ First, run the development server:
 ```bash
 run bun dev
 ```
-
-```shadcn
+install shadcs
+```bash
 bun x --bun shadcn@latest init
+```
+
+install shadcs components
+```bash
+bun x --bun shadcn@latest add button
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
