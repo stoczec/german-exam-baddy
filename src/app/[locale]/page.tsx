@@ -1,4 +1,4 @@
-import { LanguageSelect, ModeToggle } from "@/components";
+import { LanguageSelect, ModeToggle, NavMenu } from "@/components";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -20,6 +20,9 @@ export default function Home() {
   const t = useTranslations("buttons");
   return (
     <div className="flex flex-col items-center justify-center gap-4 h-screen">
+      <div>
+        <NavMenu />
+      </div>
       <div>
         <LanguageSelect />
       </div>
