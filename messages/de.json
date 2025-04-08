@@ -1,0 +1,30 @@
+{
+  "buttons": {
+    "add": "Hinzufügen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "upload": "Hochladen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "back": "Zurück",
+    "submit": "Absenden",
+    "confirm": "Bestätigen",
+    "close": "Schließen",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "reset": "Zurücksetzen",
+    "download": "Herunterladen",
+    "preview": "Vorschau",
+    "share": "Teilen",
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "signUp": "Registrieren",
+    "continue": "Fortsetzen",
+    "retry": "Erneut versuchen",
+    "refresh": "Aktualisieren",
+    "settings": "Einstellungen",
+    "help": "Hilfe"
+  }
+}

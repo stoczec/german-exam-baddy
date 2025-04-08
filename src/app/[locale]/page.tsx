@@ -1,4 +1,4 @@
-import { ModeToggle } from "@/components";
+import { LanguageSelect, ModeToggle } from "@/components";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -14,15 +14,21 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { SelectTrigger } from "@radix-ui/react-select";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("buttons");
   return (
     <div className="flex flex-col items-center justify-center gap-4 h-screen">
       <div>
-        <ModeToggle />
+        <LanguageSelect />
       </div>
       <div>
-        <Button>Button</Button>
+        <ModeToggle />
+      </div>
+      <div className="flex gap-2">
+        <Button>{t("add")}</Button>
+        <Button>{t("help")}</Button>
       </div>
       <Separator />
       <div className="flex gap-2">
@@ -68,24 +74,16 @@ export default function Home() {
       <Separator />
       <div>
         <Select>
-          <SelectTrigger className="w-[180px] border cursor-pointer">
+          <SelectTrigger className="w-[180px] border">
             <SelectValue placeholder="Select a fruit" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Fruits</SelectLabel>
-              <SelectItem value="apple" className="cursor-pointer">
-                Apple
-              </SelectItem>
-              <SelectItem value="banana" className="cursor-pointer">
-                Banana
-              </SelectItem>
-              <SelectItem value="blueberry" className="cursor-pointer">
-                Blueberry
-              </SelectItem>
-              <SelectItem value="grapes" className="cursor-pointer">
-                Grapes
-              </SelectItem>
+              <SelectItem value="apple">Apple</SelectItem>
+              <SelectItem value="banana">Banana</SelectItem>
+              <SelectItem value="blueberry">Blueberry</SelectItem>
+              <SelectItem value="grapes">Grapes</SelectItem>
               <SelectItem value="pineapple" className="cursor-pointer">
                 Pineapple
               </SelectItem>

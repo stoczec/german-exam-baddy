@@ -1,0 +1,30 @@
+{
+  "buttons": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "upload": "Upload",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "reset": "Reset",
+    "download": "Download",
+    "preview": "Preview",
+    "share": "Share",
+    "login": "Login",
+    "logout": "Logout",
+    "signUp": "Sign Up",
+    "continue": "Continue",
+    "retry": "Retry",
+    "refresh": "Refresh",
+    "settings": "Settings",
+    "help": "Help"
+  }
+}
