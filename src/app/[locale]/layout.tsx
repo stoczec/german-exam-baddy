@@ -4,6 +4,12 @@ import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components";
 import { getMessages } from "next-intl/server";
 import "./globals.css";
+import { Metadata } from "next";
+import { globalMetadata } from "../metadata";
+
+export const metadata: Metadata = {
+  ...globalMetadata,
+};
 
 export default async function RootLayout({
   children,
