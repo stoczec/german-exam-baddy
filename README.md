@@ -16,7 +16,7 @@ bun x --bun shadcn@latest add button
 ```
 import Link from:
 ```bash
-import { Link } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation"
 ```
 
 <h3>Technologies Used</h3>
