@@ -1,7 +1,7 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { ThemeProvider } from "@/components";
+import { BreadcrumbResponsive, ThemeProvider } from "@/components";
 import { getMessages } from "next-intl/server";
 import "./globals.css";
 import { Metadata } from "next";
@@ -34,7 +34,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <BreadcrumbResponsive /> {children}
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
