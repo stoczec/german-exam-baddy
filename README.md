@@ -3,7 +3,7 @@
 First, run the development server:
 
 ```bash
-run bun dev
+bun run dev
 ```
 install shadcs
 ```bash
