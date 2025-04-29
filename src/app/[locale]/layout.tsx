@@ -34,7 +34,8 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <BreadcrumbResponsive /> {children}
+            {children}
+            <BreadcrumbResponsive />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
