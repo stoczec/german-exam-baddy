@@ -1,4 +1,5 @@
 "use client";
+import Features from "@/components/PublicHome/Features";
 import Hero from "@/components/PublicHome/Hero";
 import Navbar from "@/components/PublicHome/Navbar";
 import React from "react";
@@ -10,6 +11,7 @@ export default function PreLoginPage() {
 
       <main className="flex flex-1 flex-col">
         <Hero />
+        <Features />
       </main>
       <section className="h-200 w-full bg-accent-foreground">...</section>
       {/* <Footer /> */}
