@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[100vh] flex items-center justify-center overflow-hidden">
       <img
         src="/hero_bg.jpeg"
         alt="Hero background"

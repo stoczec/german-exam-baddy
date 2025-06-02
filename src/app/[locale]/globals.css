@@ -53,7 +53,7 @@ h2 {
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root {
+.light {
   --radius: 0.5rem;
 
   --background: #ffffff;

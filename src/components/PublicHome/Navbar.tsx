@@ -10,12 +10,19 @@ import {
   NavigationMenuContent,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetFooter } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { morePublicHomeItems, publicHomeItems } from "@/data";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import Image from "next/image";
 
 export default function Navbar() {
   const isScrolled = useScrollPosition(50);
@@ -34,46 +41,55 @@ export default function Navbar() {
       )}
     >
       {/* Logo */}
-      <Link href="/publicHome" className="text-2xl font-bold">
-        <img
+      <Link href="/publicHome">
+        <Image
           src={isScrolled ? "/Logo_black.svg" : "/Logo_white.svg"}
           alt="logo"
           className="w-30 sm:w-40 xl:w-50 lg:w-32"
-        ></img>
+          width={200}
+          height={68}
+        />
       </Link>
 
       {/* Nav */}
-      <nav className="hidden lg:flex gap-6 text-sm font-medium ">
-        <NavigationMenu>
-          <NavigationMenuList className="flex gap-4 items-center">
-            {publicHomeItems.map(({ id, title, url }) => (
-              <NavigationMenuItem key={id}>
-                <NavigationMenuLink asChild>
-                  <Link href={url} className={navigationLinkClasses}>
-                    {title}
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
 
-            {/* Dropdown */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className={navigationLinkClasses}>
-                Mehr erfahren
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="min-w-[600px] overflow-hidden bg-background">
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {morePublicHomeItems.map(({ id, title, url, icon }) => (
-                    <ListItem key={id} title={title} href={url} icon={icon}>
-                      {title}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
+      <NavigationMenu className="hidden lg:flex gap-6 text-sm font-medium">
+        <NavigationMenuList>
+          {publicHomeItems.map(({ id, title, url }) => (
+            <NavigationMenuItem key={id}>
+              <NavigationMenuLink asChild>
+                <Link
+                  href={url}
+                  className={cn(
+                    "block 2xl:text-base xl:text-sm lg:text-xs",
+                    isScrolled
+                      ? "bg-transparent hover:bg-accent hover:text-foreground "
+                      : "bg-transparent hover:bg-white/10 hover:text-background "
+                  )}
+                >
+                  {title}
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </nav>
+          ))}
+
+          {/* Dropdown */}
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className={navigationLinkClasses}>
+              Mehr erfahren
+            </NavigationMenuTrigger>
+            <NavigationMenuContent className="min-w-[600px] overflow-hidden bg-background">
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                {morePublicHomeItems.map(({ id, title, url, icon }) => (
+                  <ListItem key={id} title={title} href={url} icon={icon}>
+                    {title}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
 
       {/* buttons */}
       <div className="flex gap-2 ml-auto mr-3 sm:mr-10 lg:ml-0 lg:mr-0 ">
@@ -101,34 +117,59 @@ export default function Navbar() {
       <div className="lg:hidden flex items-center">
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-12 w-12">
-              <Menu style={{ width: "30px", height: "30px" }} strokeWidth={1} />
+            <Button variant="ghost" size="icon" className="h-10 w-10">
+              <Menu className="size-7" strokeWidth={1} />
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="p-6">
             <div className="sr-only">
-              <DialogTitle>Меню</DialogTitle>
+              <DialogTitle>Menu</DialogTitle>
             </div>
+
             <nav className="flex flex-col gap-4 mt-4">
               {publicHomeItems.map(({ id, title, url }) => (
                 <Link
-                  href="url"
+                  href={url}
                   key={id}
-                  className="px-3 py-1 rounded-md bg-transparent hover:bg-accent hover:text-foreground"
+                  className="px-3 py-2 rounded-md bg-transparent hover:bg-accent hover:text-foreground"
                 >
                   {title}
                 </Link>
               ))}
+
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem key="mehr erfahren" value="mehr erfahren" className="border-b-0">
+                  <AccordionTrigger className="text-base font-normal hover:no-underline cursor-pointer px-3 py-2 rounded-md hover:bg-accent">
+                    mehr erfahren
+                  </AccordionTrigger>
+                  <AccordionContent className="mt-2">
+                    {morePublicHomeItems.map(({ id, title, url, icon: Icon }) => (
+                      <Link
+                        href={url}
+                        className={cn(
+                          "flex items-center gap-3 select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        )}
+                      >
+                        {Icon && <Icon className="h-5 w-5 mt-1 text-muted-foreground" />}
+                        <div className="">
+                          <div className="text-sm font-medium leading-none">{title}</div>
+                        </div>
+                      </Link>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
               <Button
                 variant="default"
-                size="sm"
+                size="default"
                 className="text-foreground bg-black/10 transition-colors duration-300 hover:bg-black/20"
               >
                 Anmelden
               </Button>
               <Button
-                size="sm"
-                className="md:text-sm bg-gradient-to-r from-[#4F46E5] to-[#B73027] bg-[length:200%_200%] bg-right-bottom transition-all duration-500 hover:bg-left-top"
+                size="default"
+                className=" bg-gradient-to-r from-[#4F46E5] to-[#B73027] bg-[length:200%_200%] bg-right-bottom transition-all duration-500 hover:bg-left-top"
               >
                 Kostenlos starten
               </Button>
