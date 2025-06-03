@@ -10,9 +10,9 @@ export default function Benefits() {
     <section className="flex flex-col lg:flex-row lg:justify-between container mx-auto bg-white  py-10 md:py-16 xl:py-28 gap-2.5">
       <div className="flex flex-col justify-center text-center mb-7 lg:mb-0 px-2 mx-auto">
         <p className="font-semibold text-sm sm:text-base text-left mb-4">Vorteile</p>
-        <h1 className="text-2xl text-left max-w-96 mb-6 sm:text-3xl md:text-4xl">
+        <h2 className="text-2xl text-left max-w-96 mb-6 sm:text-3xl md:text-4xl">
           Entdecken Sie die Vorteile unserer Plattform
-        </h1>
+        </h2>
         <p className="text-left text-base sm:text-lg text-muted-foreground max-w-xl  mb-10">
           Unsere Plattform bietet Ihnen eine effiziente Vorbereitung auf Deutschprüfungen. Nutzen
           Sie personalisierte Rückmeldungen und interaktive Übungen für Ihren Erfolg.
@@ -23,7 +23,7 @@ export default function Benefits() {
             <CardContent className="flex items-start gap-4 p-0">
               <Clock className="text-primary size-6 mt-1" />
               <div>
-                <h2 className="ext-base 2xl:text-lg">Zeitersparnis</h2>
+                <h3 className="ext-base 2xl:text-lg">Zeitersparnis</h3>
                 <p className="text-sm sm:text-base text-muted-foreground">
                   Schneller lernen und sich auf Prüfungen konzentrieren.
                 </p>
@@ -35,7 +35,7 @@ export default function Benefits() {
             <CardContent className="flex items-start gap-4 p-0">
               <MessageCircle className="text-primary size-8 mt-1" />
               <div>
-                <h2 className="text-base 2xl:text-lg">Personalisierte Rückmeldungen</h2>
+                <h3 className="text-base 2xl:text-lg">Personalisierte Rückmeldungen</h3>
                 <p className="text-sm sm:text-base text-muted-foreground">
                   Erhalten Sie individuelles Feedback für Ihre Schreib- und Sprechfähigkeiten.
                 </p>
