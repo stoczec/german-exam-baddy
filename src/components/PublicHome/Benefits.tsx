@@ -10,7 +10,7 @@ export default function Benefits() {
     <section className="flex flex-col lg:flex-row lg:justify-between container mx-auto bg-white  py-10 md:py-16 xl:py-28 gap-2.5">
       <div className="flex flex-col justify-center text-center mb-7 lg:mb-0 px-2 mx-auto">
         <p className="font-semibold text-sm sm:text-base text-left mb-4">Vorteile</p>
-        <h2 className="text-2xl text-left max-w-96 mb-6 sm:text-3xl md:text-4xl">
+        <h2 className="text-2xl text-left max-w-96 mb-6 sm:text-3xl md:text-4xl leading-tight">
           Entdecken Sie die Vorteile unserer Plattform
         </h2>
         <p className="text-left text-base sm:text-lg text-muted-foreground max-w-xl  mb-10">
