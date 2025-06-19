@@ -13,9 +13,11 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
+  modal,
   params,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
@@ -35,6 +37,8 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            {modal}
+            {/* Uncomment the line below to enable responsive breadcrumbs */}
             {/* <BreadcrumbResponsive /> */}
           </ThemeProvider>
         </NextIntlClientProvider>

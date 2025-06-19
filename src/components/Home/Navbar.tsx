@@ -23,9 +23,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Image from "next/image";
+import Router from "next/router";
+import { useState } from "react";
+import AuthModal from "../AuthModal/AuthModal";
 
 export default function Navbar() {
   const isScrolled = useScrollPosition(50);
+  const [modalType, setModalType] = useState<"login" | "signup" | null>(null);
+
   const navigationLinkClasses = cn(
     "2xl:text-base xl:text-sm lg:text-xs",
     isScrolled
@@ -41,7 +46,7 @@ export default function Navbar() {
       )}
     >
       {/* Logo */}
-      <Link href="/publicHome">
+      <Link href="/">
         <svg
           className="h-auto
     w-30 sm:w-40 xl:w-50 lg:w-32"
@@ -110,6 +115,8 @@ export default function Navbar() {
       {/* buttons */}
       <div className="flex gap-2 ml-auto mr-3 sm:mr-10 lg:ml-0 lg:mr-0 ">
         <Button
+          asChild
+          onClick={() => setModalType("login")}
           variant="default"
           size="sm"
           className={cn(
@@ -119,15 +126,20 @@ export default function Navbar() {
               : "text-white bg-white/10 transition-colors duration-300 hover:bg-white/20 focus:bg-white/20"
           )}
         >
-          Anmelden
+          <p>Anmelden</p>
         </Button>
         <Button
+          asChild
+          onClick={() => setModalType("signup")}
           size="sm"
           className="text-xs md:text-sm bg-gradient-to-r from-[#4F46E5] to-[#B73027] bg-[length:200%_200%] bg-right-bottom transition-all duration-500 hover:bg-left-top"
         >
-          Kostenlos starten
+          <p>Kostenlos starten</p>
         </Button>
       </div>
+      {modalType && (
+        <AuthModal type={modalType} open={!!modalType} onOpenChange={() => setModalType(null)} />
+      )}
 
       {/* Mobile menu */}
       <div className="lg:hidden flex items-center">

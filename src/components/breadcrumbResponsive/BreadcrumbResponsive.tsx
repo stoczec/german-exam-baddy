@@ -26,7 +26,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Link, usePathname } from "@/i18n/navigation";
-import { getCurrentBreadcrumbs } from "@/utils";
+import { getCurrentBreadcrumbs } from "@/lib/getBreadcrumbs";
 
 const ITEMS_TO_DISPLAY = 3;
 

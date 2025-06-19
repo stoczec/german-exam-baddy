@@ -32,7 +32,7 @@ export const items: IItems[] = [
   {
     id: 4,
     title: "Start",
-    url: "/publicHome",
+    url: "/",
   },
 ];
 export const publicHomeItems: IItems[] = [
